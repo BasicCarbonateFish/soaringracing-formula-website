@@ -1,38 +1,30 @@
-# 翱翔方程式电动赛车队官网 — 第一版
+# SOARING RACING 官网 V2.0
 
-这是**无需构建步骤**的静态网页，适合 GitHub + 腾讯云 EdgeOne Makers/Pages 部署。
+## 快速部署（现有腾讯云 EdgeOne Makers + GitHub）
+1. 解压 ZIP，进入 `soaring-racing-v2` 文件夹。
+2. 将文件夹**内部的全部文件和 assets 子文件夹**上传至现有 GitHub 仓库根目录（不要嵌套整层文件夹）。
+3. 覆盖原 `index.html`、`styles.css`、`script.js`，提交到 `main` 分支。
+4. EdgeOne Makers 会自动部署。若未更新，查看构建日志并强制刷新浏览器 Ctrl+F5。
 
-## 文件结构
-- `index.html` 网页结构和文本
-- `styles.css` 颜色、布局、响应式设计
-- `script.js` 手机菜单、滚动动画
-- `assets/favicon.svg` 临时原创图形 favicon，**非车队官方 Logo**
+## 如何更新内容
+- 文案、分区、图片引用：`index.html`
+- 调色：`styles.css` 最底部的 `:root` 自定义颜色变量
+- 照片文件：`assets/*.webp`；修改时保持文件名不变即可自动替换
+- 新闻、活动和文创尚未接入后台，需要通过修改 HTML + Git 提交更新；无支付/下单功能。
 
-## 怎么打开
-直接双击 `index.html` 或用 VS Code 的 Live Server 扩展预览。
+## 本版素材
+由车队提供的原始现场照片、Logo 和招新海报制作；图片压缩成 WebP 加速加载。
+- `hero-racing.webp` 首屏赛道动态
+- `group-2025.webp` 2025 郑州团队合影
+- `group-graduation.webp` 校园合照
+- `race-*` 赛事和工程影像
+- `recruit-poster.webp` 车队招新海报
+- `recruit-banner.webp` 车队招新宣传设计
+- `soaring-logo.png` 从提供的队徽文件转换，深色背景去除处理
 
-## GitHub 更新
-1. 打开当前链接的 GitHub 仓库。
-2. 选择 `Add file > Upload files`，上传 `index.html`、`styles.css`、`script.js` 以及 `assets/favicon.svg`（保持目录结构）。
-3. 如果无法通过网页版一次上传目录，可逐个在 GitHub 创建/上传，或使用 VS Code + GitHub Desktop。
-4. 点击 `Commit changes`，提交到 `main`。
-5. 到 EdgeOne Makers 构建部署页查看新部署结果，再点击预览。
-
-## EdgeOne 静态项目设置
-- 生产分支：`main`
-- 构建命令：无（不要使用 npm build）
-- 根目录：仓库根目录
-- 输出目录：`./` 或控制台所要求的根目录写法
-
-## 上线前必改
-- 车队官方名称、介绍文字是否已获授权且准确。
-- `hero-art` 是**原创概念插画**，不是实际赛车，请替换成车队实拍照片。
-- 赛车年份、技术参数、赛事成绩暂未填写，避免虚构。
-- 合作品牌请核对合作许可、正式名称和展示权限。
-- 合作联系方式是占位文字，需填入经授权公开的邮箱/账号。
-- `assets/favicon.svg` 不是车队官方标识。
-- 顶部及各区块内容可以直接在 HTML 中改；主色在 CSS `:root` 中改。
-- 海外节点默认预览地址不代表中国大陆可正常访问；正式发布前需绑定域名并测试三大运营商网络。
-
-## 安全
-本项目无后端、无表单，不收集访客信息。不要往 GitHub 仓库上传私人手机号、API Key、内部 CAN 报文、赞助合同和其他非公开资料。
+## 正式上线前核查
+- 赛事图片如有赛方水印或摄影版权，取得使用授权，保留署名且勿移除水印
+- 队员肖像公开发布应按车队与当事人的授权要求处理
+- 当前合作伙伴展示需核对合作关系及品牌展示许可
+- 联系方式、报名链接、文创价格和售卖规则需要在核实后补充
+- 绑定自定义域名后在中国大陆移动、电信、联通实际测试。EdgeOne 默认预览链接不保证大陆可访问
